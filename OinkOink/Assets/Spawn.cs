@@ -77,36 +77,7 @@ public class Spawn : MonoBehaviour
         //Debug.Log("I SAID WHAT? " + count);
     }
 
-    void InstantiateConveyor(GameObject conveyor, Vector3 startPos, Vector3 endPos, bool flag)
-    {
-
-        //Here we calculate how many segments will fit between the two points
-        blockCount = Mathf.RoundToInt(Vector3.Distance(startPos, endPos) / 0.5f);
-        //As we'll be using vector3.lerp we want a value between 0 and 1, and the distance value is the value we have to add
-        dist = 1 / blockCount;
-        Debug.Log("COUNT :" + blockCount);
-       // for (int i = 0; i < blockCount; i++)
-        //{
-            //conveyor.transform.position = centerPos;
-            Vector3 direction = (startPos - endPos).normalized;
-            //We increase our lerpValue
-            interpolate += dist;
-            //Get the position
-            conveyorBegin = Vector3.Lerp(startPos, endPos, interpolate);
-            //Instantiate the object
-            conveyor.transform.right = direction;
-
-            if (flag) conveyor.transform.right *= -1f;
-
-            conveyor.transform.position = conveyorBegin;
-            //Instantiate(Resources.Load("conveyor", typeof(GameObject)), conveyorBegin, Quaternion.identity);
-
-
-            //Instantiate(ropePrefab, instantiatePosition, transform.rotation);
-            // Instantiate(Resources.Load("conveyor", typeof(GameObject)), conveyorBegin, Quaternion.identity);
-        //}
-    }
-
+ 
     /*
     public void Strech(GameObject conveyor, Vector3 startPos, Vector3 endPos, bool flag)
     {
