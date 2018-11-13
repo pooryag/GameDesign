@@ -9,8 +9,8 @@ public class Spawn : MonoBehaviour
 
     private int count = 0;
 
-    private Vector3 startPos;
-    private Vector3 endPos;
+    public static Vector3 startPos;
+    public static Vector3 endPos;
     //public Rigidbody2D conveyor;
     private bool flag = true;
 
@@ -77,7 +77,7 @@ public class Spawn : MonoBehaviour
         //Debug.Log("I SAID WHAT? " + count);
     }
 
- 
+  
     /*
     public void Strech(GameObject conveyor, Vector3 startPos, Vector3 endPos, bool flag)
     {

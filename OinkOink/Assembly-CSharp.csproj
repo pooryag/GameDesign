@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Ball.cs" />
+    <Compile Include="Assets\Conveyor.cs" />
     <Compile Include="Assets\Spawn.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/Porya/Documents/GitHub/GameDesign/OinkOink/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
