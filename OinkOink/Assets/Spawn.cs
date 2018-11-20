@@ -7,7 +7,7 @@ public class Spawn : MonoBehaviour
 
     public GameObject ballHook;
 
-    private int count = 0;
+    public static int count = 0;
 
     public static Vector3 startPos;
     public static Vector3 endPos;
@@ -21,6 +21,7 @@ public class Spawn : MonoBehaviour
     private Vector2 mousePos;
     private void Update()
     {
+    
         if (Input.GetButton("Fire1"))
         {
 
@@ -45,10 +46,10 @@ public class Spawn : MonoBehaviour
                 {
                     interpolate += dist;
 
-                    Debug.Log("interpotlate :" + interpolate);
+                    //Debug.Log("interpotlate :" + interpolate);
                     conveyorBegin = Vector3.Lerp(startPos, endPos, interpolate);
 
-                    Debug.Log("conveyor being " + conveyorBegin);
+                    //Debug.Log("conveyor being " + conveyorBegin);
                     GameObject conveyor = Instantiate(Resources.Load("conveyor", typeof(GameObject))) as GameObject;
                     conveyor.transform.right = direction;
 

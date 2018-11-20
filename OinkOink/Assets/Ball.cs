@@ -17,6 +17,7 @@ public class Ball : MonoBehaviour {
     private void Update()
     {
 
+       
         if (isPressed){
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
