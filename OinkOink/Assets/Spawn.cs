@@ -14,6 +14,7 @@ public class Spawn : MonoBehaviour
     //public Rigidbody2D conveyor;
     private bool flag = true;
 
+    public static int ballCount = 4;
     private int blockCount;
     private float dist;
     private float interpolate;
@@ -26,13 +27,15 @@ public class Spawn : MonoBehaviour
         {
 
 
-            if (count == 2)
+            if (count == 2 && ballCount !=0)
             {
                 endPos = gameObject.transform.position;
                 Debug.Log("I SAID WHAT? " + count);
                 Debug.Log("End Position:  " + endPos);
                 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 GameObject newAnchor = Instantiate(Resources.Load("BallHook", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
+
+                ballCount--;
                 count = 0;
                 Destroy(gameObject);
                 blockCount = Mathf.RoundToInt(Vector3.Distance(startPos, endPos) / 0.5f);
@@ -69,7 +72,7 @@ public class Spawn : MonoBehaviour
     {
 
         count++;
-        if (count == 1)
+        if (count == 1 && ballCount !=0)
         {
             startPos = gameObject.transform.position;
             Debug.Log("I SAID WHAT? " + count);

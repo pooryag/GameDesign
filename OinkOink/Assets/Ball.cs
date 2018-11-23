@@ -13,6 +13,10 @@ public class Ball : MonoBehaviour {
     public Rigidbody2D hook;
 
     public Rigidbody2D rb;
+    
+    public GameObject nextBall;
+
+
 
     private void Update()
     {
@@ -51,6 +55,24 @@ public class Ball : MonoBehaviour {
         GetComponent<SpringJoint2D>().enabled = false;
 
         this.enabled = false;
+
+        yield return new WaitForSeconds(2f);
+        
+        Spawn.ballCount--;
+
+        Destroy(gameObject);
+        Spawn.count = 0;
+        if (nextBall != null && Spawn.ballCount!=0)
+        {
+            nextBall.SetActive(true);
+        }
+
+
+
+
+
+
+
     }
 
 }
