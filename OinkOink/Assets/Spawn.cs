@@ -7,6 +7,7 @@ public class Spawn : MonoBehaviour
 
     public GameObject ballHook;
 
+
     public static int count = 0;
 
     public static Vector3 startPos;
@@ -14,7 +15,7 @@ public class Spawn : MonoBehaviour
     //public Rigidbody2D conveyor;
     private bool flag = true;
 
-    public static int ballCount = 4;
+    public static int ballCount = 3;
     private int blockCount;
     private float dist;
     private float interpolate;
@@ -27,13 +28,19 @@ public class Spawn : MonoBehaviour
         {
 
 
-            if (count == 2 && ballCount !=0)
+            if (count == 2 && ballCount > 0)
             {
+                //showFloatingText();
                 endPos = gameObject.transform.position;
-                Debug.Log("I SAID WHAT? " + count);
+                Debug.Log("BALL COUNT " + ballCount);
                 Debug.Log("End Position:  " + endPos);
                 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                GameObject newAnchor = Instantiate(Resources.Load("BallHook", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
+                if (ballCount > 1)
+                {
+                    GameObject newAnchor = Instantiate(Resources.Load("BallHook", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
+                }else{
+                    GameObject newAnchor = Instantiate(Resources.Load("BallHookDeactivated", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
+                }
 
                 ballCount--;
                 count = 0;
@@ -68,12 +75,14 @@ public class Spawn : MonoBehaviour
 
         }
     }
+
     private void OnMouseDown()
     {
 
         count++;
-        if (count == 1 && ballCount !=0)
+        if (count == 1 && ballCount > 0)
         {
+
             startPos = gameObject.transform.position;
             Debug.Log("I SAID WHAT? " + count);
             Debug.Log("Start Position:  " + startPos);

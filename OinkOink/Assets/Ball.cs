@@ -16,13 +16,14 @@ public class Ball : MonoBehaviour {
     
     public GameObject nextBall;
 
+   // public GameObject floatingTextPrefab;
 
 
     private void Update()
     {
 
        
-        if (isPressed){
+        if (isPressed ){
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
        
@@ -36,11 +37,22 @@ public class Ball : MonoBehaviour {
 
     private void OnMouseDown()
     {
-       
-        isPressed = true;
-        rb.isKinematic = true;
-    }
 
+        if (Spawn.ballCount > 0)
+        {
+            isPressed = true;
+            rb.isKinematic = true;
+        }
+        showFloatingText();
+    }
+    public void showFloatingText()
+    {
+
+        GameObject floater = Instantiate(Resources.Load("floatingText", typeof(GameObject)), transform.position, Quaternion.identity, transform) as GameObject;
+        floater.GetComponent<TextMesh>().text = Spawn.ballCount.ToString();
+
+
+    }
     private void OnMouseUp()
     {
         isPressed = false;
@@ -62,7 +74,7 @@ public class Ball : MonoBehaviour {
 
         Destroy(gameObject);
         Spawn.count = 0;
-        if (nextBall != null && Spawn.ballCount!=0)
+        if (nextBall != null && Spawn.ballCount > 0)
         {
             nextBall.SetActive(true);
         }
@@ -70,7 +82,7 @@ public class Ball : MonoBehaviour {
 
 
 
-
+        
 
 
     }
