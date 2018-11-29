@@ -66,6 +66,7 @@
     <Compile Include="Assets\Drop.cs" />
     <Compile Include="Assets\MeshSortinOrder.cs" />
     <Compile Include="Assets\OnTouchDown.cs" />
+    <Compile Include="Assets\ReloadScene.cs" />
     <Compile Include="Assets\SortingLayerExposer.cs" />
     <Compile Include="Assets\Spawn.cs" />
     <Compile Include="Assets\TextFade.cs" />
