@@ -16,7 +16,7 @@ public class Drop : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("wtf");
+        //Debug.Log("wtf");
         if (other.gameObject.tag == "Death")
         {
             Instantiate(deathParticle, transform.position, Quaternion.identity);

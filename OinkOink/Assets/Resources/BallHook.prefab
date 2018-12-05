@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 58314600496722150}
   - component: {fileID: 114539571665117316}
   - component: {fileID: 114258732821170458}
+  - component: {fileID: 114673782081237044}
   m_Layer: 9
   m_Name: discRed (1)
   m_TagString: Untagged
@@ -43,6 +44,7 @@ GameObject:
   - component: {fileID: 4865949624680150}
   - component: {fileID: 212200193920815908}
   - component: {fileID: 50376413439024440}
+  - component: {fileID: 95593160854493462}
   m_Layer: 9
   m_Name: Hook
   m_TagString: Untagged
@@ -80,6 +82,7 @@ GameObject:
   - component: {fileID: 58754745195392938}
   - component: {fileID: 114380083456373162}
   - component: {fileID: 114226171952036930}
+  - component: {fileID: 114207875439794880}
   m_Layer: 9
   m_Name: discRed (2)
   m_TagString: Untagged
@@ -102,6 +105,7 @@ GameObject:
   - component: {fileID: 58877351851271422}
   - component: {fileID: 114114342090378830}
   - component: {fileID: 114401399602956646}
+  - component: {fileID: 114024543344936512}
   m_Layer: 9
   m_Name: discRed
   m_TagString: Untagged
@@ -129,8 +133,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882000432890254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.007, z: 0}
-  m_LocalScale: {x: 2.9825168, y: 2.9499726, z: 1}
+  m_LocalPosition: {x: 0, y: -0.006999969, z: 0}
+  m_LocalScale: {x: 2.98252, y: 2.94997, z: 1}
   m_Children: []
   m_Father: {fileID: 4357154271368752}
   m_RootOrder: 1
@@ -142,7 +146,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610671291491782}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.38, y: -2.277878, z: 0}
+  m_LocalPosition: {x: -7.15, y: -1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4865949624680150}
@@ -303,6 +307,37 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.175
+--- !u!95 &95593160854493462
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1483573779599502}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 45eecc83cdbb943baa15a592732e9468, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114024543344936512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882000432890254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9b6e63079d54f75a3d2183faa3903c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disk: {fileID: 1882000432890254}
+  virtualCam: {fileID: 0}
 --- !u!114 &114064942615451676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -319,7 +354,6 @@ MonoBehaviour:
   hook: {fileID: 50376413439024440}
   rb: {fileID: 50533473230516006}
   nextBall: {fileID: 1455854300171866}
-  floatingTextPrefab: {fileID: 0}
 --- !u!114 &114114342090378830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,6 +366,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballHook: {fileID: 1610671291491782}
+--- !u!114 &114207875439794880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1622419655599030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9b6e63079d54f75a3d2183faa3903c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disk: {fileID: 1622419655599030}
+  virtualCam: {fileID: 0}
 --- !u!114 &114226171952036930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -393,7 +440,6 @@ MonoBehaviour:
   hook: {fileID: 50376413439024440}
   rb: {fileID: 50928539676548470}
   nextBall: {fileID: 1622419655599030}
-  floatingTextPrefab: {fileID: 0}
 --- !u!114 &114539571665117316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,6 +452,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballHook: {fileID: 1610671291491782}
+--- !u!114 &114673782081237044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1455854300171866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9b6e63079d54f75a3d2183faa3903c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disk: {fileID: 1455854300171866}
+  virtualCam: {fileID: 0}
 --- !u!114 &114972750259826468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,7 +481,6 @@ MonoBehaviour:
   hook: {fileID: 50376413439024440}
   rb: {fileID: 50323417867713024}
   nextBall: {fileID: 0}
-  floatingTextPrefab: {fileID: 0}
 --- !u!212 &212104792477087868
 SpriteRenderer:
   m_ObjectHideFlags: 1

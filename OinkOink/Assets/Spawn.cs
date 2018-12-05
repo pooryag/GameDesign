@@ -7,9 +7,8 @@ public class Spawn : MonoBehaviour
 
     public GameObject ballHook;
 
-
     public static int count = 0;
-
+    private GameObject newAnchor;
     public static Vector3 startPos;
     public static Vector3 endPos;
     //public Rigidbody2D conveyor;
@@ -37,9 +36,12 @@ public class Spawn : MonoBehaviour
                 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (ballCount > 1)
                 {
-                    GameObject newAnchor = Instantiate(Resources.Load("BallHook", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
+                     newAnchor = Instantiate(Resources.Load("BallHook", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
+
+
+
                 }else{
-                    GameObject newAnchor = Instantiate(Resources.Load("BallHookDeactivated", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
+                     newAnchor = Instantiate(Resources.Load("BallHookDeactivated", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
                 }
 
                 ballCount--;
