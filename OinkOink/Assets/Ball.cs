@@ -16,7 +16,9 @@ public class Ball : MonoBehaviour {
     
     public GameObject nextBall;
 
-   // public GameObject floatingTextPrefab;
+    public static bool deactivateAnchor = false;
+
+    // public GameObject floatingTextPrefab;
 
 
     private void Update()
@@ -78,11 +80,15 @@ public class Ball : MonoBehaviour {
         {
             nextBall.SetActive(true);
         }
+        if (nextBall = null)
+        {
+            deactivateAnchor = true;
+        }
 
 
 
 
-        
+
 
 
     }

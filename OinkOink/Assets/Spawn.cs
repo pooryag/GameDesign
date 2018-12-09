@@ -8,11 +8,13 @@ public class Spawn : MonoBehaviour
     public GameObject ballHook;
 
     public static int count = 0;
+    public static int AnchorIndicator = 0; 
     private GameObject newAnchor;
     public static Vector3 startPos;
     public static Vector3 endPos;
     //public Rigidbody2D conveyor;
     private bool flag = true;
+     
 
     public static int ballCount = 3;
     private int blockCount;
@@ -37,11 +39,12 @@ public class Spawn : MonoBehaviour
                 if (ballCount > 1)
                 {
                      newAnchor = Instantiate(Resources.Load("BallHook", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
-
+                    AnchorIndicator++;
 
 
                 }else{
                      newAnchor = Instantiate(Resources.Load("BallHookDeactivated", typeof(GameObject)), mousePos, Quaternion.identity) as GameObject;
+                    //deactivateAnchor = true; 
                 }
 
                 ballCount--;

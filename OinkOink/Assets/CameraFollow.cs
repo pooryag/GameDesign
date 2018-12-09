@@ -16,13 +16,23 @@ public class CameraFollow : MonoBehaviour
     {
         virtualCam = Instantiate(Resources.Load("CMvcam", typeof(CinemachineVirtualCameraBase))) as CinemachineVirtualCameraBase;
         m_Follow = disk.transform;
-        Follow(virtualCam);
+        if (Spawn.ballCount != 3 && Spawn.AnchorIndicator!=0)
+        {
+            Follow(virtualCam);
+        }
+        
     }
 
     private void Update()
     {
+
         m_Follow = disk.transform;
-        Follow(virtualCam);
+        // Follow(virtualCam);
+
+        if (Spawn.ballCount != 3 && Spawn.AnchorIndicator != 0)
+        {
+            Follow(virtualCam);
+        }
 
     }
 
