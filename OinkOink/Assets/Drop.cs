@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Drop : MonoBehaviour {
 
+    private gameMaster gm;
     public GameObject deathParticle;
     public GameObject winParticle;
     public GameObject winText;
     //private int count = 0;
     // Use this for initialization
+
+    private void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag("gameMaster").GetComponent<gameMaster>();
+    }
     void Update () {
 		
         GetComponent<Rigidbody2D>().simulated |= Spawn.count == 2;
@@ -30,6 +36,16 @@ public class Drop : MonoBehaviour {
 
         }
 
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.tag == "coin")
+        {
+
+            Destroy(other.gameObject);
+            gm.points++;
+        }
     }
 
 

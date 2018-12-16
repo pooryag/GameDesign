@@ -16,7 +16,7 @@ public class Spawn : MonoBehaviour
     private bool flag = true;
      
 
-    public static int ballCount = 3;
+    public static int ballCount = 5;
     private int blockCount;
     private float dist;
     private float interpolate;
