@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class gameMaster : MonoBehaviour {
 
     public int points;
+    public GameObject completeLevelUI;
     public Text pointText;
     public bool dad = true;
     public bool mom = true;
@@ -25,6 +26,7 @@ public class gameMaster : MonoBehaviour {
 
         yield return new WaitForSeconds(6.0f);
         Debug.Log("WIN");
+        completeLevelUI.SetActive(true);
 
 
     }
