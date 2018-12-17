@@ -16,7 +16,7 @@ public class ReloadScene : MonoBehaviour {
 	}
 
     public void LoadCurrentScene(){
-        Spawn.ballCount = 3;
+        Spawn.ballCount = 5;
         Spawn.count = 0;
         Spawn.AnchorIndicator = 0;
         Ball.deactivateAnchor = false; 

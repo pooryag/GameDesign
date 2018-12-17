@@ -74,7 +74,9 @@
     <Compile Include="Assets\CinemachineExamples\Shared\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Conveyor.cs" />
     <Compile Include="Assets\Drop.cs" />
+    <Compile Include="Assets\flicker.cs" />
     <Compile Include="Assets\gameMaster.cs" />
+    <Compile Include="Assets\hitSheep.cs" />
     <Compile Include="Assets\MeshSortinOrder.cs" />
     <Compile Include="Assets\OnTouchDown.cs" />
     <Compile Include="Assets\ReloadScene.cs" />

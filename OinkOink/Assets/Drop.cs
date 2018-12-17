@@ -8,6 +8,7 @@ public class Drop : MonoBehaviour {
     public GameObject deathParticle;
     public GameObject winParticle;
     public GameObject winText;
+
     //private int count = 0;
     // Use this for initialization
 
@@ -26,13 +27,36 @@ public class Drop : MonoBehaviour {
         if (other.gameObject.tag == "Death")
         {
             Instantiate(deathParticle, transform.position, Quaternion.identity);
+
+            switch(gameObject.name){
+                case "sheepkid":
+                    Debug.Log("kid is dead");
+                    gm.kid = false;
+                    break;
+                case "sheepmom":
+                    Debug.Log("mom is dead");
+                    gm.mom = false;
+                    break;
+                case "sheepdad":
+                    Debug.Log("dad is dead");
+                    gm.dad = false;
+                    break;
+                case "sheep":
+                    Debug.Log("son is dead");
+                    gm.son = false;
+                    break;
+
+            }
+
             Destroy(gameObject);
+
         }
         if (other.gameObject.tag == "Heaven")
         {
             //count++;
             Instantiate(winParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            gm.heavenEntry = true; 
 
         }
 
@@ -47,6 +71,7 @@ public class Drop : MonoBehaviour {
             gm.points++;
         }
     }
+
 
 
 }
