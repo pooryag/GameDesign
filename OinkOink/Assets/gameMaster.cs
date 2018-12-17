@@ -6,6 +6,7 @@ public class gameMaster : MonoBehaviour {
 
     public int points;
     public GameObject completeLevelUI;
+    public GameObject levelLost;
     public Text pointText;
     public bool dad = true;
     public bool mom = true;
@@ -18,8 +19,24 @@ public class gameMaster : MonoBehaviour {
         if (heavenEntry){
             StartCoroutine(winDelay());
         }
+        if(!dad && !mom && !kid && !son){
+            levelLost.SetActive(true);
+        }
+        if (Spawn.ballCount == 0){
+            StartCoroutine(loseDelay());
+        }
 	}
 
+    IEnumerator loseDelay()
+    {
+
+
+        yield return new WaitForSeconds(3.0f);
+        levelLost.SetActive(true);
+
+
+
+    }
     IEnumerator winDelay()
     {
 
