@@ -282,14 +282,6 @@ Prefab:
       propertyPath: virtualCam
       value: 
       objectReference: {fileID: 2038491687}
-    - target: {fileID: 4357154271368752, guid: 277da966490474a1497e4f2dd4a80256, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4357154271368752, guid: 277da966490474a1497e4f2dd4a80256, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 277da966490474a1497e4f2dd4a80256, type: 2}
   m_IsPrefabAsset: 0
